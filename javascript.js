@@ -13,8 +13,14 @@ function computerPlay() { //This function makes the selection for the computer
             computerSelection =  "SCISSORS";
             break;
     }
-  console.log(computerSelection);
-
-    
+    console.log(computerSelection);
+    return computerSelection;    
 }
-computerPlay();
+
+function playRound (playerSelection, computerSelection) {
+
+}
+
+let computerSelection = computerPlay();
+const playerSelection = "rock";
+console.log(playRound(playerSelection, computerSelection));
