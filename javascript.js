@@ -22,20 +22,41 @@ function playRound (playerSelection, computerSelection) {//This function compare
     computerSelection = computerSelection.toLowerCase();//converts text to lower case to disregard uppercase
     
     if (playerSelection == computerSelection) {//Checks for draws
-        let result = "Draw"
+        let result = "Draw!"
         return result;
     }
     else {//If there isn't a draw then compare the selection
-        switch (playerSelection) {
+        switch (playerSelection) {//Depending on what the human chooses compare to computer
             case 'rock':
                 if (computerSelection == "paper")
                 {
-                    let result = "You win! Rock beats Paper";
+                    let result = "You lose! Paper beats Rock";
+                    return result;
+                }
+                else {
+                    let result = "You win! Rock beats Scissor";
                     return result;
                 }
             case 'paper':
+                if (computerSelection == "scissors")
+                {
+                    let result = "You lose! Scissors beats Paper";
+                    return result;
+                }
+                else {
+                    let result = "You win! Paper beats Rock";
+                    return result;
+                }
             case 'scissors':
-
+                if (computerSelection == "rock")
+                {
+                    let result = "You lose! Rock beats scissors";
+                    return result;
+                }
+                else {
+                    let result = "You win! Scissors beats Paper";
+                    return result;
+                }
         }
     }
     console.log(playerSelection);
