@@ -1,9 +1,8 @@
 function computerPlay() { //This function makes the selection for the computer
-for (let i = 0; i < 10; i++) {
     let random = Math.floor(Math.random()*3 + 1); //Creates a random numer from 1 to 3
     console.log(random);
-    let computerSelection;
-    switch (random) {
+    let computerSelection; //This saves the computer turn
+    switch (random) { //This switch converts from number to text
         case 1: 
             computerSelection = "ROCK";
             break;
@@ -14,8 +13,8 @@ for (let i = 0; i < 10; i++) {
             computerSelection =  "SCISSORS";
             break;
     }
-    console.log(computerSelection);
-}
+  console.log(computerSelection);
+
     
 }
 computerPlay();
