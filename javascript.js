@@ -19,7 +19,13 @@ function computerPlay() { //This function makes the selection for the computer
 
 function playRound (playerSelection, computerSelection) {//This function compares the selection of computer and human
     playerSelection = playerSelection.toLowerCase();
-    computerSelection = computerSelection.toLowerCase();
+    computerSelection = computerSelection.toLowerCase();//converts text to lower case to disregard uppercase
+    
+    if (playerSelection == computerSelection) {//Checks for draws
+        let result = "Draw"
+        return result;
+    }
+    
     console.log(playerSelection);
     console.log(computerSelection);
 }
