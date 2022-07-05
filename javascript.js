@@ -63,6 +63,12 @@ function playRound (playerSelection, computerSelection) {//This function compare
     console.log(computerSelection);
 }
 
-let computerSelection = computerPlay();
-const playerSelection = "rock";
-console.log(playRound(playerSelection, computerSelection));
+function game() {//This is the main game function
+    for (let i = 0; i < 5; i++) {//repeats the rounds 5 times
+        let computerSelection = computerPlay();
+        const playerSelection = "rock";
+        console.log(playRound(playerSelection, computerSelection));
+    }
+}
+ game();
+
