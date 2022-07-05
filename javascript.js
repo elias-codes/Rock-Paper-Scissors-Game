@@ -1,19 +1,19 @@
 function computerPlay() { //This function makes the selection for the computer
     let random = Math.floor(Math.random()*3 + 1); //Creates a random numer from 1 to 3
-    console.log(random);
+    //console.log(random);
     let computerSelection; //This saves the computer turn
     switch (random) { //This switch converts from number to text
         case 1: 
-            computerSelection = "ROCK";
+            computerSelection = "Rock";
             break;
         case 2:
-            computerSelection = "PAPER";
+            computerSelection = "Paper";
             break;
         case 3:
-            computerSelection =  "SCISSORS";
+            computerSelection =  "Scissors";
             break;
     }
-    console.log(computerSelection);
+    //console.log(computerSelection);
     return computerSelection;    
 }
 
@@ -22,7 +22,7 @@ function playRound (playerSelection, computerSelection) {//This function compare
     computerSelection = computerSelection.toLowerCase();//converts text to lower case to disregard uppercase
     
     if (playerSelection == computerSelection) {//Checks for draws
-        let result = "Draw!"
+        let result = "draw"
         return result;
     }
     else {//If there isn't a draw then compare the selection
@@ -30,31 +30,31 @@ function playRound (playerSelection, computerSelection) {//This function compare
             case 'rock':
                 if (computerSelection == "paper")
                 {
-                    let result = "You lose! Paper beats Rock";
+                    let result = "lose";
                     return result;
                 }
                 else {
-                    let result = "You win! Rock beats Scissor";
+                    let result = "win";
                     return result;
                 }
             case 'paper':
                 if (computerSelection == "scissors")
                 {
-                    let result = "You lose! Scissors beats Paper";
+                    let result = "lose";
                     return result;
                 }
                 else {
-                    let result = "You win! Paper beats Rock";
+                    let result = "win";
                     return result;
                 }
             case 'scissors':
                 if (computerSelection == "rock")
                 {
-                    let result = "You lose! Rock beats scissors";
+                    let result = "lose";
                     return result;
                 }
                 else {
-                    let result = "You win! Scissors beats Paper";
+                    let result = "win";
                     return result;
                 }
         }
@@ -67,7 +67,10 @@ function game() {//This is the main game function
     for (let i = 0; i < 5; i++) {//repeats the rounds 5 times
         let computerSelection = computerPlay();
         const playerSelection = "rock";
+        
         console.log(playRound(playerSelection, computerSelection));
+        console.log(playerSelection);
+        console.log(computerSelection);
     }
 }
  game();
