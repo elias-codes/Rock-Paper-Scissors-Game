@@ -92,5 +92,20 @@ function game() {//This is the main game function
         console.log(scorePC);
     }
 }
+
+function score (scoreHuman, scorePC) { //Compares each score and gives a final result
+    let finalResults;
+    if (scoreHuman == scorePC) {//Results for a draw
+        finalResults = "It's a draw!";
+    }
+    else if (scoreHuman > scorePC) {//Results when user wins
+        finalResults = "You won!";
+
+    }
+    else {
+        finalResults = "You lost";
+    }
+}
+
  game();
 
