@@ -68,7 +68,7 @@ function game() {//This is the main game function
     let scorePC = 0;
     for (let i = 0; i < 5; i++) {//repeats the rounds 5 times
         let computerSelection = computerPlay(); //calls computer choice
-        const playerSelection = "rock";//asks for user choice
+        let playerSelection = prompt("Choose rock, paper or scissors");//asks for user choice
         let results = playRound(playerSelection, computerSelection); //Sends each selection for comparison and receives a flag with the results
         
         switch (results) {//This checks the received result, displays a message and adds a score
@@ -88,14 +88,15 @@ function game() {//This is the main game function
                 break;
         }
         
-        console.log(results);
+        /*console.log(results);
         console.log(playerSelection);
         console.log(computerSelection);
         console.log(scoreHuman);
-        console.log(scorePC);
+        console.log(scorePC);*/
     }
     
     console.log(score(scoreHuman, scorePC));//prints final result
+    console.log(`Your score: ${scoreHuman} ; PC score ${scorePC}`);
 }
 
 function score (scoreHuman, scorePC) { //Compares each score and gives a final result
