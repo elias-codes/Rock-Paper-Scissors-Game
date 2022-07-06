@@ -74,14 +74,17 @@ function game() {//This is the main game function
         switch (results) {//This checks the received result, displays a message and adds a score
             case 'draw':
                 console.log("Draw!");
+                console.log(`You both chose ${playerSelection}`);
                 break;
             case 'win':
                 console.log("You win!");
                 scoreHuman++;
+                console.log(`${playerSelection} beats ${computerSelection}`);
                 break;
             case 'lose':
                 console.log("You lose!");
                 scorePC++;
+                console.log(`${computerSelection} beats ${playerSelection}`);
                 break;
         }
         
@@ -91,6 +94,8 @@ function game() {//This is the main game function
         console.log(scoreHuman);
         console.log(scorePC);
     }
+    
+    console.log(score(scoreHuman, scorePC));//prints final result
 }
 
 function score (scoreHuman, scorePC) { //Compares each score and gives a final result
@@ -105,6 +110,7 @@ function score (scoreHuman, scorePC) { //Compares each score and gives a final r
     else {
         finalResults = "You lost";
     }
+    return finalResults;
 }
 
  game();
