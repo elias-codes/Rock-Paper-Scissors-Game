@@ -67,8 +67,22 @@ function game() {//This is the main game function
     for (let i = 0; i < 5; i++) {//repeats the rounds 5 times
         let computerSelection = computerPlay();
         const playerSelection = "rock";
+        let results = playRound(playerSelection, computerSelection); //this receives the results
+        let scoreHuman = 0;
+        let scorePC = 0;
+        switch (results) {//This checks the received result, displays a message and adds a score
+            case 'draw':
+                console.log("Draw!");
+                break;
+            case 'win':
+                console.log("You win!");
+                break;
+            case 'lose':
+                console.log("You lose!");
+                break;
+        }
         
-        console.log(playRound(playerSelection, computerSelection));
+        console.log(results);
         console.log(playerSelection);
         console.log(computerSelection);
     }
