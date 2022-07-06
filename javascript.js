@@ -64,27 +64,32 @@ function playRound (playerSelection, computerSelection) {//This function compare
 }
 
 function game() {//This is the main game function
+    let scoreHuman = 0;
+    let scorePC = 0;
     for (let i = 0; i < 5; i++) {//repeats the rounds 5 times
-        let computerSelection = computerPlay();
-        const playerSelection = "rock";
-        let results = playRound(playerSelection, computerSelection); //this receives the results
-        let scoreHuman = 0;
-        let scorePC = 0;
+        let computerSelection = computerPlay(); //calls computer choice
+        const playerSelection = "rock";//asks for user choice
+        let results = playRound(playerSelection, computerSelection); //Sends each selection for comparison and receives a flag with the results
+        
         switch (results) {//This checks the received result, displays a message and adds a score
             case 'draw':
                 console.log("Draw!");
                 break;
             case 'win':
                 console.log("You win!");
+                scoreHuman++;
                 break;
             case 'lose':
                 console.log("You lose!");
+                scorePC++;
                 break;
         }
         
         console.log(results);
         console.log(playerSelection);
         console.log(computerSelection);
+        console.log(scoreHuman);
+        console.log(scorePC);
     }
 }
  game();
